@@ -1,11 +1,9 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
-import { counterReducer } from "./reducer/counter.reducer";
-import { createReducer } from "@reduxjs/toolkit";
-import { thunk } from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
+import counterSlite from "./reducer/counter.slite";
 
 
-const reducer= combineReducers({
-    counter:counterReducer
+export const store=configureStore({
+    reducer:{
+        counter: counterSlite,
+    }
 })
-
-export const store=createStore(reducer,{},applyMiddleware(thunk))

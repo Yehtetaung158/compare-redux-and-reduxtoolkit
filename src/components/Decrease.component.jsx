@@ -1,12 +1,13 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { decrease } from '../store/action/counter.action'
+import { decrease } from '../store/reducer/counter.slite'
+// import { decrease } from '../store/action/counter.action'
 
 const DecreaseComponent = () => {
     const dispatch=useDispatch()
 
     const handleIncrease=()=>{
-        decrease(dispatch)
+        dispatch(decrease())
     }
 
   return (
